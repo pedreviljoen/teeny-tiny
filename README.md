@@ -4,7 +4,7 @@
 
 # teeny-tiny
 
-[![Package version](https://img.shields.io/npm/v/react-native-side-drawer.svg?style=flat-square)](https://npmjs.org/package/teeny-tiny)
+[![Package version](https://img.shields.io/npm/v/teeny-tiny.svg?style=flat-square)](https://npmjs.org/package/teeny-tiny)
 [![Make a pull request](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![License](https://img.shields.io/npm/l/teeny-tiny.svg?style=flat-square)](https://github.com/pedreviljoen/teeny-tiny/blob/master/LICENSE) 
 [![npm downloads](https://img.shields.io/npm/dm/teeny-tiny.svg?style=flat-square)](https://npmjs.org/package/teeny-tiny)
@@ -42,28 +42,18 @@ Require the compress & decompress functions from the module
 const { compress, decompress } = require('teeny-tiny')
 ```
 
-Compress a simple string, returns a promise:
+Compress or Decompress, returns a promise:
 
 ```javascript
-const INPUT_STRING = "Hello World"
+async function start (){
+    const compressResult = await compress('Hello World')
+    console.log(`[LOG]: ${compressResult}`)     // prints: [LOG]: x��H����/�I
 
-compress(INPUT_STRING).then(res => {
-    console.log(`[LOG]: ${res}`)    // should print: x��p�����q�
-}).catch(err => {
-    console.log(`[ERR]: ${err}`)
-})
-```
+    const decompressResult = await decompress(compressResult)
+    console.log(`[LOG]: ${decompressResult}`)   // prints: [LOG]: Hello World
+}
 
-Decompress a simple string, returns a promise:
-
-```javascript
-const INPUT_STRING = "x��p�����q�"
-
-decompress(INPUT_STRING).then(res => {
-    console.log(`[LOG]: ${res.toString()}`) // should print: Hello World
-}).catch(err => {
-    console.log(`[ERR]: ${err}`)
-})
+start()
 ```
 
 ## Contribute
