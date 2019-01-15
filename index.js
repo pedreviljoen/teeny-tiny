@@ -3,12 +3,12 @@ const util = require('util')
 zlib.deflate = util.promisify(zlib.deflate)
 zlib.inflate = util.promisify(zlib.inflate)
 
-async function compress(input = '') {
-    return await zlib.deflate(input)
+function compress(input = '') {
+    return zlib.deflate(input)
 }
 
-async function decompress(input = '') {
-    return await zlib.inflate(input)
+function decompress(input = '') {
+    return zlib.inflate(input)
 }
 
 module.exports = {
