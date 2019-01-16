@@ -1,6 +1,6 @@
 {
   "name": "teeny-tiny",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Compression and decompression. Simple & lightweight",
   "main": "index.js",
   "scripts": {
