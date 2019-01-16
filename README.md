@@ -46,7 +46,10 @@ Compress or Decompress, returns a promise:
 
 ```javascript
 async function start (){
-    const compressResult = await compress('Hello World')
+    const opts = true                           // will compress with best compression
+                                                // if false with best speed
+
+    const compressResult = await compress('Hello World', opts)
     console.log(`[LOG]: ${compressResult}`)     // prints: [LOG]: x��H����/�I
 
     const decompressResult = await decompress(compressResult)
