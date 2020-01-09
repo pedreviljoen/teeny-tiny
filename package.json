@@ -31,7 +31,7 @@
   "author": "Pedre Viljoen",
   "license": "MIT",
   "devDependencies": {
-    "husky": "^3.0.0",
+    "husky": "^4.0.2",
     "jest": "^23.6.0",
     "prettier": "1.19.0"
   }
